@@ -6,6 +6,7 @@ const handleSeries = require("../controlers/series");
 const handleChinese = require("../controlers/chinese");
 const handleAisa = require("../controlers/aisa");
 const handleSingleMovie = require("../controlers/singleMovie");
+const handleSearch = require("../controlers/search");
 
 const route = express.Router();
 
@@ -20,6 +21,8 @@ route.get("/series", handleSeries);
 route.get("/chinese", handleChinese);
 
 route.get("/asia", handleAisa);
+
+route.post("/search", handleSearch);
 
 route.post("/single", handleSingleMovie);
 
