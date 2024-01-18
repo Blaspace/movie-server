@@ -3,6 +3,7 @@ const cheerio = require("cheerio");
 
 const handleSingleMovie = async (req, res) => {
   const { url } = req.body;
+  console.log(url);
   const list = [];
   const data = await axios(url);
   const html = data.data;
@@ -10,7 +11,7 @@ const handleSingleMovie = async (req, res) => {
   const synopsis = $(".elementor-widget-container").find("p").text();
   const size = $(".elementor-alert-description").text();
   const links = [];
-  const youtube = $(".elementor-video").attr("src");
+  const youtube = $("iframe").attr("src");
 
   $(".elementor-section").each((i, value) => {
     const link = $(value).find(".elementor-button-link").attr("href");

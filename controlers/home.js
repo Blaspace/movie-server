@@ -9,7 +9,7 @@ const handleHome = async (req, res) => {
   const $ = cheerio.load(html);
   $(".eael-grid-post").each((i, value) => {
     const title = $(value).find(".eael-grid-post-link").text();
-    const url = $(value).find(".eael-grid-post-link").attr("href");
+    const url = $(value).find("a").attr("href");
     const img = $(value).find("img").attr("src");
     list.push({ title, url, img });
   });
