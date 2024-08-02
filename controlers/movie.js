@@ -1,5 +1,5 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
+import axios from "axios";
+import cheerio from "cheerio";
 
 const handleMovie = async (req, res) => {
   const list = [];
@@ -17,4 +17,4 @@ const handleMovie = async (req, res) => {
   res.send(list);
 };
 
-module.exports = handleMovie;
+export default handleMovie;

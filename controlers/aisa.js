@@ -1,7 +1,8 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
+import axios from "axios";
+import cheerio from "cheerio";
 
 const handleAisa = async (req, res) => {
+  try{
   const list = [];
   const URL = "https://nkiri.com/category/asian-movies/";
   const data = await axios(URL);
@@ -15,6 +16,9 @@ const handleAisa = async (req, res) => {
     list.push({ title, url, img });
   });
   res.send(list);
+}catch(err){
+  console.log(err)
+}
 };
 
-module.exports = handleAisa;
+export default handleAisa;

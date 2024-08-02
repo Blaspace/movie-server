@@ -1,9 +1,9 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
+import axios from "axios";
+import cheerio from "cheerio";
 
 const handleSingleMovie = async (req, res) => {
   const { url } = req.body;
-  console.log(url);
+  
   const list = [];
   const data = await axios(url);
   const html = data.data;
@@ -28,4 +28,4 @@ const handleSingleMovie = async (req, res) => {
   res.send(singleMovie);
 };
 
-module.exports = handleSingleMovie;
+export default handleSingleMovie;

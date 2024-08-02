@@ -1,5 +1,5 @@
-const cheerio = require("cheerio");
-const axios = require("axios");
+import axios from "axios";
+import cheerio from "cheerio";
 
 const handleSearch = async (req, res) => {
   const { url } = req.body;
@@ -18,4 +18,4 @@ const handleSearch = async (req, res) => {
   res.send(list);
 };
 
-module.exports = handleSearch;
+export default handleSearch;

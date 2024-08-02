@@ -1,5 +1,5 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
+import axios from "axios";
+import cheerio from "cheerio";
 
 const handleChinese = async (req, res) => {
   const list = [];
@@ -16,4 +16,4 @@ const handleChinese = async (req, res) => {
   res.send(list);
 };
 
-module.exports = handleChinese;
+export default handleChinese;

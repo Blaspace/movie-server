@@ -1,12 +1,12 @@
-const express = require("express");
-const handleHome = require("../controlers/home");
-const handleKDrama = require("../controlers/K-Drama");
-const handleMovie = require("../controlers/movie");
-const handleSeries = require("../controlers/series");
-const handleChinese = require("../controlers/chinese");
-const handleAisa = require("../controlers/aisa");
-const handleSingleMovie = require("../controlers/singleMovie");
-const handleSearch = require("../controlers/search");
+import express from "express"
+import handleHome from "../controlers/home.js"
+import handleKDrama from "../controlers/K-Drama.js"
+import handleMovie from "../controlers/movie.js"
+import handleSeries from "../controlers/series.js"
+import handleChinese from "../controlers/chinese.js"
+import handleAisa from "../controlers/aisa.js"
+import handleSingleMovie from "../controlers/singleMovie.js"
+import handleSearch from "../controlers/search.js"
 
 const route = express.Router();
 
@@ -26,4 +26,4 @@ route.post("/search", handleSearch);
 
 route.post("/single", handleSingleMovie);
 
-module.exports = route;
+export default route;
